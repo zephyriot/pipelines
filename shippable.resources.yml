@@ -14,3 +14,9 @@ resources:
         sourceName: nashif/zephyr
       seed:
         versionName: master.21
+
+    - name: buildparam
+      type: params
+      version:
+        params:
+          BUILDME: "1"
