@@ -1,4 +1,6 @@
-- name: github-repository
-  type: gitRepo
-  integration: github
+resources:
+
+    - name: zephyr-repo
+      type: gitRepo
+      integration: github
 

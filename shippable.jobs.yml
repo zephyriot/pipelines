@@ -3,3 +3,10 @@ jobs:
       type: runCI
       steps:
         - IN: zephyr_ciRepo
+
+    - name: zephyr_runDocs
+      type: runCI
+      steps:
+        - IN: zephyr-repo
+        - TASK:
+           - script: ./scripts/ci/build-docs..sh
