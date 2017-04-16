@@ -1,9 +1,4 @@
 jobs:
-    - name: zephyr_runCI
-      type: runCI
-      steps:
-        - IN: zephyr_ciRepo
-
     - name: zephyr_runDocs
       type: runCI
       steps:

@@ -3,4 +3,7 @@ resources:
     - name: zephyr-repo
       type: gitRepo
       integration: github
+      pointer:
+          sourceName: zephyriot/zephyr
+          branch: master
 
