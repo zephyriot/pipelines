@@ -7,3 +7,10 @@ resources:
           sourceName: zephyriot/zephyr
           branch: master
 
+    - name: zephyr-docker
+      type: image
+      integration: DH-Integration
+      pointer:
+        sourceName: nashif/zephyr
+      seed:
+        versionName: master.21
