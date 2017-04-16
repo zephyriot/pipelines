@@ -4,6 +4,7 @@ jobs:
       steps:
         - IN: zephyr-repo
         - IN: zephyr-docker
+        - OUT: zephyr_runCI
         - TASK:
            - script: . /build/IN/zephyr-repo/gitRepo/scripts/ci/build-docs.sh
 
@@ -11,3 +12,4 @@ jobs:
       type: runCI
       steps:
         - IN: zephyr_runDocs
+          switch: off
