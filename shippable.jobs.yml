@@ -4,4 +4,4 @@ jobs:
       steps:
         - IN: zephyr-repo
         - TASK:
-           - script: ./build/IN/zephyr-repo/gitRepo/scripts/ci/build-docs.sh
+           - script: ./build/IN/zephyr-repo/scripts/ci/build-docs.sh
