@@ -1,0 +1,4 @@
+- name: github-repository
+  type: gitRepo
+  integration: github
+
