@@ -8,9 +8,23 @@ jobs:
            - script: ls -lR /build/IN
            - script: . /build/IN/zephyr-repo/gitRepo/scripts/ci/build-docs.sh
 
+    - name: zephyr_run_daily
+      type: runSh
+      steps:
+        - IN: daily-verify-trigger
+        - TASK:
+           - script: echo "Running daily job"
+
+    - name: zephyr_run_code_scan
+      type: runSh
+      steps:
+        - IN: code-scan-trigger
+        - TASK:
+           - script: echo "Running code scan"
+
     - name: zephyr_runCI
       type: runCI
       steps:
-        - IN: daily-verify-trigger
-        - IN: code-scan-trigger
+        - IN: zephyr_run_code_scan
+        - IN: zephyr_run_daily
         - IN: zephyr_runDocs
