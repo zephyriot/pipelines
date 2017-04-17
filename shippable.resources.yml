@@ -6,6 +6,8 @@ resources:
       pointer:
           sourceName: zephyriot/zephyr
           branch: master
+          buildOnPullRequest: true
+          buildOnCommit: true
 
     - name: zephyr-docker
       type: image
