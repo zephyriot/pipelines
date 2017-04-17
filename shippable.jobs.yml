@@ -7,7 +7,7 @@ jobs:
         - IN: nightly-trigger
         - TASK:
            - script: ls -la /build/IN
-           - script: ls -la /build/IN/nightly-trigger
+           - script: ls -la /build/IN/nightly-trigger/time
            - script: . /build/IN/zephyr-repo/gitRepo/scripts/ci/build-docs.sh
 
     - name: zephyr_runCI
