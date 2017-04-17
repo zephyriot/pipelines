@@ -1,4 +1,8 @@
 resources:
+    - name: nightly-trigger
+      type: time
+      seed:
+          interval: "51 * * * *"
 
     - name: zephyr-repo
       type: gitRepo
