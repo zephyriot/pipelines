@@ -1,8 +1,13 @@
 resources:
-    - name: nightly-trigger
+    - name: code-scan-trigger
       type: time
       seed:
-          interval: "12 * * * *"
+          interval: "32 22 * * *"
+
+    - name: daily-verify-trigger
+      type: time
+      seed:
+          interval: "2 * * * *"
 
     - name: zephyr-repo
       type: gitRepo
