@@ -11,7 +11,7 @@ jobs:
     - name: zephyr_run_daily
       type: runSh
       steps:
-        - IN: daily-verify-trigger
+        - IN: daily-verify
         - TASK:
            - script: echo "Running daily job"
            - script: echo 'PLATFORMS="--all"' >> ${ZEPHYR_RUN_DAILY_STATE}/job.env
@@ -19,7 +19,7 @@ jobs:
     - name: zephyr_run_code_scan
       type: runSh
       steps:
-        - IN: code-scan-trigger
+        - IN: code-scan
         - TASK:
            - script: echo "Running code scan"
            - script: echo 'PLATFORMS="--all"' >> ${ZEPHYR_RUN_CODE_SCAN}/job.env
