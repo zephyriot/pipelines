@@ -5,7 +5,7 @@ jobs:
         - IN: zephyr-repo
         - IN: zephyr-docker
         - TASK:
-           - script: ls -lR /build/IN
+           - script: env
            - script: . /build/IN/zephyr-repo/gitRepo/scripts/ci/build-docs.sh
 
     - name: zephyr_run_daily
@@ -14,7 +14,10 @@ jobs:
         - IN: daily-verify
         - TASK:
            - script: echo "Running daily job"
-           - script: echo 'PLATFORMS="--all"' >> ${ZEPHYR_RUN_DAILY_STATE}/job.env
+           - script: mkdir -p ${ZEPHYR_RUN_DAILY_STATE}/${RESOURCE_ID}
+           - script: echo 'PLATFORMS="--all"' >> ${ZEPHYR_RUN_DAILY_STATE}/${RESOURCE_ID}/job.env
+           - script: date >> ${ZEPHYR_RUN_DAILY_STATE}/${RESOURCE_ID}/job.date
+           - script: env
 
     - name: zephyr_run_code_scan
       type: runSh
@@ -22,7 +25,7 @@ jobs:
         - IN: code-scan
         - TASK:
            - script: echo "Running code scan"
-           - script: echo 'PLATFORMS="--all"' >> ${ZEPHYR_RUN_CODE_SCAN}/job.env
+           - script: echo 'PLATFORMS="--all"' >> ${ZEPHYR_RUN_CODE_SCAN_STATE}/job.env
 
     - name: zephyr_runCI
       type: runCI
