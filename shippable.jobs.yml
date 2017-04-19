@@ -14,9 +14,8 @@ jobs:
         - IN: daily-verify
         - TASK:
            - script: echo "Running daily job"
-           - script: mkdir -p ${ZEPHYR_RUN_DAILY_STATE}/${RESOURCE_ID}
+           - script: mkdir -p ${ZEPHYR_RUN_DAILY_STATE}/${RESOURCE_ID} ${ZEPHYR_RUN_DAILY_STATE}/DONE
            - script: echo 'PLATFORMS="--all"' >> ${ZEPHYR_RUN_DAILY_STATE}/${RESOURCE_ID}/job.env
-           - script: date >> ${ZEPHYR_RUN_DAILY_STATE}/${RESOURCE_ID}/job.date
            - script: env
 
     - name: zephyr_run_code_scan
