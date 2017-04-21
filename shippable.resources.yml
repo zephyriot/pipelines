@@ -16,7 +16,7 @@ resources:
           sourceName: zephyriot/zephyr
           branch: master
           buildOnPullRequest: true
-          buildOnCommit: true
+          buildOnCommit: false
 
     - name: zephyr-docker
       type: image
