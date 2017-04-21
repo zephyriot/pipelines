@@ -3,7 +3,7 @@ jobs:
       type: runSh
       steps:
         - IN: zephyr-repo
-        - IN: zephyr-docker
+          showBuildStatus: true
         - OUT: zephyr_ciRepo
         - TASK:
            - script: env
@@ -32,4 +32,3 @@ jobs:
       steps:
         - IN: zephyr_run_code_scan
         - IN: zephyr_run_daily
-        - IN: zephyr_runDocs
