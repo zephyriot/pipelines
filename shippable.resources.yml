@@ -9,6 +9,14 @@ resources:
       seed:
           interval: "31 22 * * *"
 
+    - name: zephyr_ciRepo
+      type: gitRepo
+      integration: github
+      pointer:
+          sourceName: zephyriot/zephyr
+          branch: master
+          buildOnPullRequest: true
+
     - name: zephyr-repo
       type: gitRepo
       integration: github
@@ -17,6 +25,7 @@ resources:
           branch: master
           buildOnPullRequest: true
           buildOnCommit: true
+          showBuildStatus: true
 
     - name: zephyr-docker
       type: image

@@ -4,6 +4,7 @@ jobs:
       steps:
         - IN: zephyr-repo
         - IN: zephyr-docker
+        - OUT: zephyr_ciRepo
         - TASK:
            - script: env
            - script: . /build/IN/zephyr-repo/gitRepo/scripts/ci/build-docs.sh
