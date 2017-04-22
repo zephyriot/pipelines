@@ -26,8 +26,9 @@ resources:
       seed:
         versionName: master.21
 
-    - name: buildparam
+    - name: trigger_by
       type: params
       version:
         params:
-          BUILDME: "1"
+            BUILD_NUMBER: "1"
+            JOB_TRIGGERED_BY_NAME_HACK: "seed"
