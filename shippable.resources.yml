@@ -15,7 +15,7 @@ resources:
       pointer:
           sourceName: zephyriot/zephyr
           branch: master
-          buildOnPullRequest: true
+          buildOnPullRequest: false
           buildOnCommit: false
 
     - name: zephyr-docker
