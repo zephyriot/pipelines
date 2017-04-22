@@ -17,8 +17,11 @@ jobs:
         - OUT: trigger_by
         - TASK:
            - script: echo "Running daily job"
-           - script: echo "BUILD_NUMBER=${BUILD_NUMBER}" > ${JOB_STATE}/trigger_by.ENV
-           - script: echo "JOB_TRIGGERED_BY_NAME_HACK=${JOB_TRIGGERED_BY_NAME}" > ${JOB_STATE}/trigger_by.ENV
+           - script: echo "BUILD_NUMBER=${BUILD_NUMBER}"
+           - script: echo "JOB_TRIGGERED_BY_NAME_HACK=${JOB_TRIGGERED_BY_NAME}"
+           - script: echo "BUILD_NUMBER=${BUILD_NUMBER}" > ${JOB_STATE}/trigger_by.env
+           - script: echo "JOB_TRIGGERED_BY_NAME_HACK=${JOB_TRIGGERED_BY_NAME}" >> ${JOB_STATE}/trigger_by.env
+           - script: cat ${JOB_STATE}/trigger_by.env
            - script: env
 
     - name: zephyr_run_code_scan
@@ -28,8 +31,11 @@ jobs:
         - OUT: trigger_by
         - TASK:
            - script: echo "Running code scan"
-           - script: echo "BUILD_NUMBER=${BUILD_NUMBER}" > ${JOB_STATE}/trigger_by.ENV
-           - script: echo "JOB_TRIGGERED_BY_NAME_HACK=${JOB_TRIGGERED_BY_NAME}" > ${JOB_STATE}/trigger_by.ENV
+           - script: echo "BUILD_NUMBER=${BUILD_NUMBER}"
+           - script: echo "JOB_TRIGGERED_BY_NAME_HACK=${JOB_TRIGGERED_BY_NAME}"
+           - script: echo "BUILD_NUMBER=${BUILD_NUMBER}" > ${JOB_STATE}/trigger_by.env
+           - script: echo "JOB_TRIGGERED_BY_NAME_HACK=${JOB_TRIGGERED_BY_NAME}" >> ${JOB_STATE}/trigger_by.env
+           - script: cat ${JOB_STATE}/trigger_by.env
            - script: env
 
     - name: zephyr_runCI
