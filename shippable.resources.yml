@@ -7,7 +7,7 @@ resources:
     - name: daily-verify
       type: time
       seed:
-          interval: "27 * * * *"
+          interval: "27 22 * * *"
 
     - name: zephyr-repo
       type: gitRepo
