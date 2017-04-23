@@ -5,7 +5,6 @@ jobs:
         - IN: zephyr-repo
           showBuildStatus: true
         - OUT: zephyr_ciRepo
-        - OUT: trigger_by
         - TASK:
            - script: env
            - script: . /build/IN/zephyr-repo/gitRepo/scripts/ci/build-docs.sh
@@ -43,4 +42,3 @@ jobs:
       steps:
         - IN: trigger_by
         - IN: zephyr_ciRepo
-          switch: off
